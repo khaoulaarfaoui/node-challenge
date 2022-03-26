@@ -4,6 +4,7 @@ const path = require('path');
 module.exports = {
   db: {
     host: '0.0.0.0',
+    type: 'postgres',
     port: 5432,
     database: 'challenge',
   },
