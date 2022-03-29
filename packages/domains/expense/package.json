@@ -4,6 +4,8 @@
     "description": "Expenses domain logic",
     "private": true,
     "dependencies": {
-      "pg": "^8.7.3"
+        "express": "^4.17.3",
+        "pg": "^8.7.3",
+        "typeorm": "^0.3.4"
     }
-  }
+}

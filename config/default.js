@@ -7,6 +7,8 @@ module.exports = {
     type: 'postgres',
     port: 5432,
     database: 'challenge',
+    username: 'admin',
+    password: 'admin'
   },
   debug: {
     stackSize: 4,
