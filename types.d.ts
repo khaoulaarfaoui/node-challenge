@@ -10,6 +10,8 @@ interface ConfigDefinition {
         host: string
         port: number
         database: string
+        username:string; 
+        password:string
     }
     debug: {
         stackSize: number

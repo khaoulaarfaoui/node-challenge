@@ -3,13 +3,14 @@ const path = require('path');
 
 module.exports = {
   db: {
-    host: '0.0.0.0',
-    type: 'postgres',
-    port: 5432,
-    database: 'challenge',
-    username: 'admin',
-    password: 'admin'
+    host:process.env.TYPEORM_HOST,
+    type:process.env.TYPEORM_TYPE,
+    port:process.env.TYPEORM_PORT,
+    database: process.env.TYPEORM_DATABASE,
+    username: process.env.TYPEORM_USERNAME,
+    password:process.env.TYPEORM_PASSWORD
   },
+
   debug: {
     stackSize: 4,
   },

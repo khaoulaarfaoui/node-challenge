@@ -23,6 +23,6 @@
     "types.d.ts",
     "packages/**/*.ts",
     "test/**/*.ts"
-  ]
+, "packages/utils/db.js", "packages/utils/db.js", "packages/domains/expense/database/connection.js"  ]
 }
   

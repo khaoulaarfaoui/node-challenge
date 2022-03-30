@@ -1,4 +1,4 @@
-import config from './config/default'
+import config from 'config'
 import context from './middleware/context';
 import express, {
   Request,
@@ -12,10 +12,10 @@ import { router as userRoutes } from '@nc/domain-user';
 import { router as expenseRoutes } from '@nc/domain-expense';
 import { createServer as createHTTPServer, Server } from 'http';
 import { createServer as createHTTPSServer, Server as SecureServer } from 'https';
-import { nextTick } from 'process';
 
 const logger = Logger('server');
 const app = express();
+
 const server: Server | SecureServer | any =
   config.https.enabled === true
     ? createHTTPSServer(config.https, app as any)
