@@ -9,11 +9,11 @@ export class User extends BaseEntity {
     first_name!: string;
 
     @Column()
-    last_name!: number;
+    last_name!: string;
 
     @Column()
     company_name: string;
 
     @Column()
-    ssn: number;
+    ssn: string;
 }

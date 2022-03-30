@@ -13,14 +13,13 @@ router.get('/get-users', async (req, res) => {
   return res.send(users);
 });
 
-router.get('/get-users/', async (req, res) => {
-  const users= await User.find();
-   return res.send(users);
- });
- router.get('/get-user-details/:id', async(req, res) => {
-  const user = await User.findOne({where: {id: req.params.id}})
- console.log(user);
-  if (!user) return res.status(404).json({})
- 
-  return res.json(user)
- })
+ router.get('/get-user-details/:id', async(req,res,next) => {
+  const [userError, userDetails]  = await to(User.findOne({where: {id: req.params.id}}))
+ if (userError) {
+  return next(new ApiError(userError, userError.status, `Could not get user details: ${userError}`, userError.title, req));
+}
+if (!userDetails) {
+  return res.json({});
+}
+return res.json(secureTrim(userDetails));
+});
