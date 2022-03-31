@@ -56,3 +56,36 @@ The command above will run the following test suites sequentially:
 
 
 Happy hacking 😁!
+
+**Resolution**
+
+What happened inside my head when first saw the challenge : 
+
+> Lets do what was asked from us and make the code work.
+
+Second idea that pop up : 
+
+> Once the code starts to work. We will refactor and improve to make it scalable and maintainable.
+
+Seeing that we will have some mappings between DB and code i thought using an ORM that will help us write the sql queries using object-oriented paradigm. 
+and [TypeORM](https://github.com/typeorm/typeorm) is definitely the most mature ORM available in the node.js that supports typescript and Postgres.
+
+***Commit 1: feat(expenses-display): setting up the environment*** 
+ Well, basically like the commit message suggests at first time, It was mandatory the set up the environment.
+ 
+***Commit 2:feat(expenses-display): adding expenses API and updating users to use TypeORM*** 
+Configured the database inside expenses api, created the expenses entity and set up the adequate routing for it. 
+Started migrating the existing code in user to use typeorm.
+
+***Commit 3: Refactor(expenses-display): externalizing Connection to database***
+Since both user and expense api where both calling the DB and to keep up with the best practices and code like DRY. I decided to externalize the db connection file to the utils package.
+
+***Commit 4:Refactor(expenses-details): adjusting user details to be more adequate with the initial code*** 
+Adding the formatter  back after refactoring the user api to use typeorm
+
+AND FINALLY 
+
+***Commit 5 :feat(expenses):adding acceptance test***
+adding acceptance test to the expenses api
+
+THATS IT FOLKS! 
